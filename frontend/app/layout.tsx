@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <SideBar></SideBar>
         
-        <main className="flex w-full p-12">
+        <main className="flex w-full py-36 px-24 text-coral">
           {children}
         </main>
 
