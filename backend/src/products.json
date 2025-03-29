@@ -1,0 +1,172 @@
+[
+    {
+        "name": "Continente Tamarilho",
+        "price": "12.99",
+        "brand": "continente"
+    },
+    {
+        "name": "Froiz Alho Francês",
+        "price": "2.85",
+        "brand": "froiz"
+    },
+    {
+        "name": "Froiz Laranja do Algarve",
+        "price": "1.25",
+        "brand": "froiz"
+    },
+    {
+        "name": "Santa Teresa Marmelada Natural",
+        "price": "16.66",
+        "brand": "santa-teresa"
+    },
+    {
+        "name": "Nordigal Arroz Xau-Xau",
+        "price": "3.96",
+        "brand": "nordigal"
+    },
+    {
+        "name": "Froiz Bacalhau da Noruega Especial",
+        "price": "18.75",
+        "brand": "froiz"
+    },
+    {
+        "name": "Pepino",
+        "price": "1.99",
+        "brand": "sem-marca"
+    },
+    {
+        "name": "Agrodelta Azeitonas Pretas Oxidadas",
+        "price": "6.99",
+        "brand": "agrodelta"
+    },
+    {
+        "name": "Froiz Porco Pá York Fresca",
+        "price": "3.99",
+        "brand": "froiz"
+    },
+    {
+        "name": "Paysan Breton Queijo Brie",
+        "price": "18.99",
+        "brand": "paysan-breton"
+    },
+    {
+        "name": "Primor Bacon Extra sem Couro e sem Cartilagem",
+        "price": "16.75",
+        "brand": "primor"
+    },
+    {
+        "name": "Collell Salame Extra Ervas Finas",
+        "price": "13.36",
+        "brand": "collell"
+    },
+    {
+        "name": "Froiz Moelas Frango",
+        "price": "3.99",
+        "brand": "froiz"
+    },
+    {
+        "name": "Froiz Perninhas de Peru",
+        "price": "3.95",
+        "brand": "froiz"
+    },
+    {
+        "name": "Pingo Doce Bife de Frango Embalagem",
+        "price": "6.98",
+        "brand": "pingo-doce"
+    },
+    {
+        "name": "Froiz Arinca",
+        "price": "5.99",
+        "brand": "froiz"
+    },
+    {
+        "name": "Continente Camarão Cozido 30/50 Fresco",
+        "price": "10.99",
+        "brand": "continente"
+    },
+    {
+        "name": "Continente Kumquat Selecção",
+        "price": "13.99",
+        "brand": "continente"
+    },
+    {
+        "name": "Continente Mexilhão",
+        "price": "2.19",
+        "brand": "continente"
+    },
+    {
+        "name": "Continente Uva Branca sem Grainha",
+        "price": "2.99",
+        "brand": "continente"
+    },
+    {
+        "name": "Froiz Tentáculos de Pota",
+        "price": "6.99",
+        "brand": "froiz"
+    },
+    {
+        "name": "Froiz Fiambre Perna Extra",
+        "price": "12.18",
+        "brand": "froiz"
+    },
+    {
+        "name": "Avibom Pato Congelado",
+        "price": "4.98",
+        "brand": "avibom"
+    },
+    {
+        "name": "Froiz Papaia",
+        "price": "5.59",
+        "brand": "froiz"
+    },
+    {
+        "name": "Nordfish Bacalhau Lombos 200/300",
+        "price": "21.79",
+        "brand": "nordfish"
+    },
+    {
+        "name": "Elpozo Mortadela com Azeitonas",
+        "price": "7.29",
+        "brand": "elpozo"
+    },
+    {
+        "name": "Primor Paio York Vermelho",
+        "price": "11.79",
+        "brand": "primor"
+    },
+    {
+        "name": "Froiz Costeletas Vitela 1ª",
+        "price": "13.95",
+        "brand": "froiz"
+    },
+    {
+        "name": "García Baquero Queijo Cabra",
+        "price": "24.41",
+        "brand": "garcia-baquero"
+    },
+    {
+        "name": "Froiz Amêijoa Branca",
+        "price": "9.10",
+        "brand": "froiz"
+    },
+    {
+        "name": "Froiz Carcaça de Frango",
+        "price": "1.19",
+        "brand": "froiz"
+    },
+    {
+        "name": "Froiz Lombo de Porco sem Osso",
+        "price": "5.29",
+        "brand": "froiz"
+    },
+    {
+        "name": "Continente Rojões de Porco",
+        "price": "4.99",
+        "brand": "continente"
+    },
+    {
+        "name": "Froiz Camarão 50-70",
+        "price": "9.95",
+        "brand": "froiz"
+    }
+]
