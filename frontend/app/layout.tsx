@@ -27,14 +27,14 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body
-        className={`flex ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`h-screen flex ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SideBar></SideBar>
-        
-        <main className="flex w-full py-36 px-24 text-coral">
+
+        <main className="flex justify-center xl:items-center w-full text-coral py-12 overflow-y-auto h-screen">
           {children}
         </main>
-
+        
       </body>
     </html>
   );
