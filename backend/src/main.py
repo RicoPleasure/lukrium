@@ -1,16 +1,29 @@
-from fastapi import FastAPI
-from get_database_concorrentes import get_data_from_api  # Ensure this fetches and saves JSON
+from fastapi import FastAPI, Query
+from get_database_concorrentes import get_data_from_api
 from ai_processor import generate_statistics
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 @app.get("/")
 def read_root():
-    return {"message": "Hello from FastAPI!"}
+    return {"message": "Hello from Jonas!"}
 
 @app.get("/generate_price")
-def generate_price():
+def generate_price(product_name: str = Query(...), product_description: str = Query(...)):
     get_data_from_api()
 
     try:
@@ -36,8 +49,8 @@ def generate_price():
         - Considere preços mais altos para marcas conhecidas e produtos especiais.
         - Produtos genéricos ou de menor qualidade podem ter preços mais baixos.
 
-        - **Nome do Produto**: Pão de Forma  
-        - **Descrição do Produto**: Com códea  
+        - Nome do Produto: {product_name}  
+        - Descrição do Produto: {product_description}  
 
     Forneça um único valor numérico representando o preço estimado. **Não inclua símbolos monetários ou texto extra, apenas o valor do preço.**
     """ 
