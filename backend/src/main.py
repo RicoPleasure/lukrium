@@ -3,6 +3,7 @@ from get_database_concorrentes import get_data_from_api
 from ai_processor import generate_statistics
 import json
 from fastapi.middleware.cors import CORSMiddleware
+from read_data_set import export_sample_prod_info_to_json
 
 app = FastAPI()
 
@@ -56,10 +57,21 @@ def generate_price(product_name: str = Query(...), product_description: str = Qu
     """ 
 
     ai_result = generate_statistics(prompt)
-
     return {"ai_analysis": ai_result.text}
 
+@app.get("/generate_risky_products")
+def generate_risky_products():
+    try:
+        with open("sample_prod_info.json", "r", encoding="utf-8") as json_file:
+            sample_data = json.load(json_file)
+    except FileNotFoundError:
+        return {"error": "products.json not found"}
+
+    dataset = json.dumps(sample_data, indent=2)
+
+    return {"result": dataset}
 
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+    export_sample_prod_info_to_json()
