@@ -34,7 +34,6 @@ export default function RootLayout({
         <main className="flex justify-center xl:items-center w-full text-coral py-12 overflow-y-auto h-screen">
           {children}
         </main>
-        
       </body>
     </html>
   );

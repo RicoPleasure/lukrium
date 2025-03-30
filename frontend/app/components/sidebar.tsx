@@ -12,7 +12,6 @@ import {
 } from "@heroicons/react/24/outline";
 
 const SideBar = () => {
-  
   const pathname = usePathname();
 
   const options = [
@@ -39,12 +38,15 @@ const SideBar = () => {
             href={option.link}
             className={`p-3 rounded-xl w-60 md:w-64 flex items-center justify-start gap-4 text-white font-bold text-2xl duration-200 ease-linear hover:scale-90 hover:opacity-70 ${option.link == pathname ? "bg-[#D9D9D9]/20" : ""}`}
           >
-            <option.icon className="hidden md:block h-7 w-7 text-white" /> {option.name}
+            <option.icon className="hidden md:block h-7 w-7 text-white" />{" "}
+            {option.name}
           </Link>
         ))}
       </li>
 
-      <p className="text-white text-center mb-2 opacity-85">© 2025 Hackaloiros 4.0</p>
+      <p className="text-white text-center mb-2 opacity-85">
+        © 2025 Hackaloiros 4.0
+      </p>
     </section>
   );
 };

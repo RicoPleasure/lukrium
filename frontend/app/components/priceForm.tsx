@@ -41,8 +41,8 @@ const PriceForm: React.FC = () => {
       } else {
         setError(data.error || "Erro ao calcular o preço.");
       }
-    } catch (err) {
-      setError("Erro de conexão com o servidor.");
+    } catch (error) {
+      setError(`Erro de conexão com o servidor: ${error}`);
     }
   };
 
@@ -82,7 +82,12 @@ const PriceForm: React.FC = () => {
                 CONFIRMAR
               </button>
 
-              {loading && !estimatedPrice && <div className="flex items-center justify-center gap-4"><div className="loader"></div><span>Loading...</span></div> }
+              {loading && !estimatedPrice && (
+                <div className="flex items-center justify-center gap-4">
+                  <div className="loader"></div>
+                  <span>Loading...</span>
+                </div>
+              )}
             </div>
           </form>
         </div>
@@ -112,16 +117,14 @@ const PriceForm: React.FC = () => {
       </section>
 
       <div className="flex flex-col gap-2 justify-start items-end w-full h-36">
-      
-      {error && <p className="text-coral">{error}</p>}
+        {error && <p className="text-coral">{error}</p>}
 
-      {estimatedPrice !== null && (
-        <>
-          <p>PREÇO SUGERIDO:</p>
-          <p className="font-bold text-9xl">{estimatedPrice}€</p>
-        </>
-      )}
-
+        {estimatedPrice !== null && (
+          <>
+            <p>PREÇO SUGERIDO:</p>
+            <p className="font-bold text-9xl">{estimatedPrice}€</p>
+          </>
+        )}
       </div>
     </section>
   );

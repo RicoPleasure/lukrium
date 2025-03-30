@@ -1,5 +1,9 @@
-import Image from "next/image";
+import ReviewTable from "../components/reviewTable";
 
 export default function Review() {
-  return <div>Revisão</div>;
+  return (
+    <div className="container mx-auto py-10">
+      <ReviewTable />
+    </div>
+  );
 }
