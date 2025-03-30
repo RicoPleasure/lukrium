@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --coral: #C73530;
+  --coral: #c73530;
 }
 
 @theme inline {
@@ -18,7 +18,7 @@
   :root {
     --background: #ffffff;
     --foreground: #ededed;
-    --coral: #C73530;
+    --coral: #c73530;
   }
 }
 

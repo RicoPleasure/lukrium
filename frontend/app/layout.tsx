@@ -30,11 +30,8 @@ export default function RootLayout({
         className={`flex ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SideBar></SideBar>
-        
-        <main className="flex w-full py-36 px-24 text-coral">
-          {children}
-        </main>
 
+        <main className="flex justify-center w-full py-36 px-24 text-coral">{children}</main>
       </body>
     </html>
   );
