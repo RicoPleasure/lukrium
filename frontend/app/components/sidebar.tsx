@@ -12,6 +12,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const SideBar = () => {
+  
   const pathname = usePathname();
 
   const options = [
@@ -22,23 +23,23 @@ const SideBar = () => {
   ];
 
   return (
-    <section className="flex flex-col h-screen w-[312px] bg-coral pt-10 px-5">
+    <section className="flex flex-col h-screen w-[295px] md:w-[312px] bg-coral pt-10 px-5">
       <Image
         src={"/images/lukrium.png"}
         alt=""
-        width={230}
+        width={180}
         height={50}
-        className="ml-3"
+        className="md:w-[230px] ml-3"
       />
 
-      <li className="h-full items-start justify-center gap-6 flex flex-col mb-[320px]">
+      <li className="h-full items-start justify-start mt-16 gap-6 flex flex-col">
         {options.map((option) => (
           <Link
             key={option.name}
             href={option.link}
-            className={`p-3 rounded-xl w-64 flex items-center justify-start gap-4 text-white font-bold text-2xl duration-200 ease-linear hover:scale-90 hover:opacity-70 ${option.link == pathname ? "bg-[#D9D9D9]/20" : ""}`}
+            className={`p-3 rounded-xl w-60 md:w-64 flex items-center justify-start gap-4 text-white font-bold text-2xl duration-200 ease-linear hover:scale-90 hover:opacity-70 ${option.link == pathname ? "bg-[#D9D9D9]/20" : ""}`}
           >
-            <option.icon className="h-7 w-7 text-white" /> {option.name}
+            <option.icon className="hidden md:block h-7 w-7 text-white" /> {option.name}
           </Link>
         ))}
       </li>

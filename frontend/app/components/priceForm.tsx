@@ -48,7 +48,7 @@ const PriceForm: React.FC = () => {
 
   return (
     <section className="flex flex-col gap-6">
-      <section className="flex items-center justify-center gap-28">
+      <section className="flex flex-col xl:flex-row items-center justify-center gap-14 xl:gap-28">
         <div className="flex flex-col gap-5">
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-14">
@@ -88,7 +88,7 @@ const PriceForm: React.FC = () => {
         </div>
 
         <div
-          className={`flex justify-center items-center ${!image ? "border-4 rounded-xl border-dashed" : ""} h-[452px] w-[480px]`}
+          className={`flex justify-center items-center ${!image ? "border-4 rounded-xl border-dashed" : ""} h-[380px] w-[380px] xl:h-[452px] xl:w-[480px]`}
         >
           {image ? (
             <img
