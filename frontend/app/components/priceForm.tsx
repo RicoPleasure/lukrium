@@ -83,6 +83,28 @@ const PriceForm: React.FC = () => {
         <p className="text-green-500 font-bold">Preço Estimado: {estimatedPrice}</p>
         )}
       </div>
+
+      <div className={`flex justify-center items-center ${ !image ? "border-4 rounded-xl border-dashed" : ""} h-[452px] w-[480px]`}>
+        {image ? (
+          <img
+            src={image}
+            alt="Uploaded Image"
+            className="w-full h-full object-cover rounded-xl opacity-80 inset-shadow-2xs"
+          />
+        ) : (
+          <label className="flex justify-center duration-300 ease-in-out transition-all h-full w-full flex-col items-center gap-3 cursor-pointer hover:bg-coral/10">
+            <PlusIcon className="h-12 w-12" />
+            <span>Adicionar Imagem</span>
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleImageUpload}
+            />
+          </label>
+        )}
+      </div>
+      
     </section>
   );
 };
