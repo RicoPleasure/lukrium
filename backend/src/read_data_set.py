@@ -39,7 +39,6 @@ def export_sample_prod_info_to_json(output_file='sample_prod_info.json'):
 
             # Filter the dataset based on the condition
             filtered_dataset = [item for item in data_list if item.get("_20231226", 0) <= 0.9]
-            print(f"Filtered dataset: {filtered_dataset}")
             # Write the filtered data to a JSON file
             with open(output_file, 'w') as json_file:
                 json.dump(filtered_dataset, json_file, indent=4)

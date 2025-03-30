@@ -67,9 +67,10 @@ def generate_risky_products():
     except FileNotFoundError:
         return {"error": "products.json not found"}
 
-    dataset = json.dumps(sample_data, indent=2)
+    # dataset = json.dumps(sample_data, indent=2)
 
-    return {"result": dataset}
+    # return {"result": dataset}
+    return sample_data
 
 if __name__ == "__main__":
     import uvicorn
