@@ -31,7 +31,9 @@ export default function RootLayout({
       >
         <SideBar></SideBar>
 
-        <main className="flex justify-center w-full py-36 px-24 text-coral">{children}</main>
+        <main className="flex justify-center w-full py-36 px-24 text-coral">
+          {children}
+        </main>
       </body>
     </html>
   );

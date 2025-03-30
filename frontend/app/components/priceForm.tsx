@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { PlusIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
@@ -19,15 +19,19 @@ const PriceForm: React.FC = () => {
   const [estimatedPrice, setEstimatedPrice] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setEstimatedPrice(null);
 
     try {
       const formattedProductName = productName.replace(/ /g, "+");
       const formattedProductDescription = productDescription.replace(/ /g, "+");
 
       const response = await fetch(
-        `http://localhost:8000/generate_price?product_name=${formattedProductName}&product_description=${formattedProductDescription}`
+        `http://localhost:8000/generate_price?product_name=${formattedProductName}&product_description=${formattedProductDescription}`,
       );
       const data = await response.json();
 
@@ -43,68 +47,82 @@ const PriceForm: React.FC = () => {
   };
 
   return (
-    <section className="flex items-center justify-center gap-28">
-      <div className="flex flex-col gap-5">
-
-        <form onSubmit={handleSubmit}>
+    <section className="flex flex-col gap-6">
+      <section className="flex items-center justify-center gap-28">
+        <div className="flex flex-col gap-5">
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-14">
-                <div className="flex flex-col gap-1 items-start justify-center">
+              <div className="flex flex-col gap-1 items-start justify-center">
                 <span>PRODUTO</span>
                 <input
-                    type="text"
-                    value={productName}
-                    onChange={(e) => setProductName(e.target.value)}
-                    className="focus:outline-none w-[380px] h-16 border-2 border-coral rounded-lg px-4"
-                    required
+                  type="text"
+                  value={productName}
+                  onChange={(e) => setProductName(e.target.value)}
+                  className="focus:outline-none w-[380px] h-16 border-2 border-coral rounded-lg px-4"
+                  required
                 />
-                </div>
+              </div>
 
-                <div className="flex flex-col gap-1 items-start justify-center">
-                  <span>DESCRIÇÃO</span>
-                  <textarea
-                      value={productDescription}
-                      onChange={(e) => setProductDescription(e.target.value)}
-                      className="focus:outline-none resize-none w-[380px] h-52 border-2 border-coral rounded-lg p-4 align-text-top"
-                      required
-                  />
-                </div>
+              <div className="flex flex-col gap-1 items-start justify-center">
+                <span>DESCRIÇÃO</span>
+                <textarea
+                  value={productDescription}
+                  onChange={(e) => setProductDescription(e.target.value)}
+                  className="focus:outline-none resize-none w-[380px] h-52 border-2 border-coral rounded-lg p-4 align-text-top"
+                  required
+                />
+              </div>
+            </div>
 
-                <button
+            <div className="flex space-between items-center justify-between">
+              <button
                 type="submit"
                 className="w-40 h-12 text-center bg-[#FFC2C2] rounded-xl hover:bg-coral hover:text-white transition-all active:scale-95 ease-in-out duration-300 cursor-pointer"
-                >
+              >
                 CONFIRMAR
-                </button>
+              </button>
+
+              {loading && !estimatedPrice && <div className="flex items-center justify-center gap-4"><div className="loader"></div><span>Loading...</span></div> }
             </div>
-        </form>
+          </form>
+        </div>
 
-        {error && <p className="text-red-500">{error}</p>}
-        {estimatedPrice !== null && (
-        <p className="text-green-500 font-bold">Preço Estimado: {estimatedPrice}</p>
-        )}
-      </div>
-
-      <div className={`flex justify-center items-center ${ !image ? "border-4 rounded-xl border-dashed" : ""} h-[452px] w-[480px]`}>
-        {image ? (
-          <img
-            src={image}
-            alt="Uploaded Image"
-            className="w-full h-full object-cover rounded-xl opacity-80 inset-shadow-2xs"
-          />
-        ) : (
-          <label className="flex justify-center duration-300 ease-in-out transition-all h-full w-full flex-col items-center gap-3 cursor-pointer hover:bg-coral/10">
-            <PlusIcon className="h-12 w-12" />
-            <span>Adicionar Imagem</span>
-            <input
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={handleImageUpload}
+        <div
+          className={`flex justify-center items-center ${!image ? "border-4 rounded-xl border-dashed" : ""} h-[452px] w-[480px]`}
+        >
+          {image ? (
+            <img
+              src={image}
+              alt="Uploaded Image"
+              className="w-full h-full object-cover rounded-xl opacity-80 inset-shadow-2xs"
             />
-          </label>
-        )}
-      </div>
+          ) : (
+            <label className="flex justify-center duration-300 ease-in-out transition-all h-full w-full flex-col items-center gap-3 cursor-pointer hover:bg-coral/10">
+              <PlusIcon className="h-12 w-12" />
+              <span>Adicionar Imagem</span>
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={handleImageUpload}
+              />
+            </label>
+          )}
+        </div>
+      </section>
+
+      <div className="flex flex-col gap-2 justify-start items-end w-full h-36">
       
+      {error && <p className="text-coral">{error}</p>}
+
+      {estimatedPrice !== null && (
+        <>
+          <p>PREÇO SUGERIDO:</p>
+          <p className="font-bold text-9xl">1.29€</p>
+        </>
+      )}
+
+      </div>
     </section>
   );
 };
