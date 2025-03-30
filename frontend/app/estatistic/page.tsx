@@ -1,3 +1,7 @@
+import AnaliticsTable from "../components/analiticsTable";
+
 export default function Estatistic() {
-  return <div>estatistic</div>;
+  return (
+    <AnaliticsTable />
+  );
 }
