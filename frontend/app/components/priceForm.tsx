@@ -118,7 +118,7 @@ const PriceForm: React.FC = () => {
       {estimatedPrice !== null && (
         <>
           <p>PREÇO SUGERIDO:</p>
-          <p className="font-bold text-9xl">1.29€</p>
+          <p className="font-bold text-9xl">{estimatedPrice}€</p>
         </>
       )}
 
