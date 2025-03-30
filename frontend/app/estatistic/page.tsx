@@ -1,5 +1,10 @@
-import Image from "next/image";
+import EstatisticTable from "../components/estatisticTable";
 
 export default function Estatistic() {
-  return <div>Estatistica</div>;
+
+  return (
+    <div className="container mx-auto py-10">
+      <EstatisticTable />
+    </div>
+  );
 }

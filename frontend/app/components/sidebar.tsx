@@ -44,7 +44,7 @@ const SideBar = () => {
         ))}
       </li>
 
-      <p className="text-center mb-2 opacity-85">© 2025 Hackaloiros 4.0</p>
+      <p className="text-white text-center mb-2 opacity-85">© 2025 Hackaloiros 4.0</p>
     </section>
   );
 };
