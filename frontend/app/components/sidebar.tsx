@@ -36,7 +36,7 @@ const SideBar = () => {
           <Link
             key={option.name}
             href={option.link}
-            className={`p-3 rounded-xl w-60 md:w-64 flex items-center justify-start gap-4 text-white font-bold text-2xl duration-200 ease-linear hover:scale-90 hover:opacity-70 ${option.link == pathname ? "bg-[#D9D9D9]/20" : ""}`}
+            className={`p-3 font-tektur rounded-xl w-60 md:w-64 flex items-center justify-start gap-4 text-white font-bold text-2xl duration-200 ease-linear hover:scale-90 hover:opacity-70 ${option.link == pathname ? "bg-[#D9D9D9]/20" : ""}`}
           >
             <option.icon className="hidden md:block h-7 w-7 text-white" />{" "}
             {option.name}

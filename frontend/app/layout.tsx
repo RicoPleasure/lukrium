@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Tektur, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 import SideBar from "./components/sidebar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const tektur = Tektur({
+  variable: "--font-tektur",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lexend = Lexend_Deca({
+  variable: "--font-lexend",
   subsets: ["latin"],
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body
-        className={`h-screen flex ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`h-screen flex ${tektur.variable} ${lexend.variable} antialiased`}
       >
         <SideBar></SideBar>
 
