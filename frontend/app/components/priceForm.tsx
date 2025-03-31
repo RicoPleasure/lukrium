@@ -53,7 +53,7 @@ const PriceForm: React.FC = () => {
           <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-14">
               <div className="flex flex-col gap-1 items-start justify-center">
-                <span>PRODUTO</span>
+                <span className="font-tektur font-bold text-lg">PRODUTO</span>
                 <input
                   type="text"
                   value={productName}
@@ -64,7 +64,7 @@ const PriceForm: React.FC = () => {
               </div>
 
               <div className="flex flex-col gap-1 items-start justify-center">
-                <span>DESCRIÇÃO</span>
+                <span className="font-tektur font-bold text-lg">DESCRIÇÃO</span>
                 <textarea
                   value={productDescription}
                   onChange={(e) => setProductDescription(e.target.value)}
@@ -77,7 +77,7 @@ const PriceForm: React.FC = () => {
             <div className="flex space-between items-center justify-between">
               <button
                 type="submit"
-                className="w-40 h-12 text-center bg-[#FFC2C2] rounded-xl hover:bg-coral hover:text-white transition-all active:scale-95 ease-in-out duration-300 cursor-pointer"
+                className="w-40 h-12 font-bold text-center bg-[#FFC2C2] rounded-xl hover:bg-coral hover:text-white transition-all active:scale-95 ease-in-out duration-300 cursor-pointer"
               >
                 CONFIRMAR
               </button>
