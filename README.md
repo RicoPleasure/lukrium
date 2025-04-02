@@ -1,6 +1,6 @@
 
 
-![Logo](https://github.com/RicoPleasure/Lukrium/blob/main/frontend/public/images/lukrium.png?raw=true)
+![Logo](https://github.com/RicoPleasure/lukrium/blob/master/frontend/public/images/lukrium.png?raw=true)
 # Lukrium 
 
 Lukrium is an internal tool developed for MC Sonae to optimize price management. It includes a price optimization generator for new products, comparing them with market prices, and a price review alert system that identifies products losing competitiveness. With this solution, the company can quickly adapt to the market, ensuring strategic and competitive pricing.
